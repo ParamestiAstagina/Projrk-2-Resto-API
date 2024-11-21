@@ -1,0 +1,430 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "poppins", sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+/* AppBar */
+.app-bar {
+  padding: 8px 16px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand h1 {
+  color: #468585;
+  text-transform: uppercase;
+  font-size: 22px;
+  user-select: none;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #468585;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 5%;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main Content */
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.fan-art-resto {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.resto-info {
+  padding: 16px 24px;
+}
+
+.resto-info__title h2 {
+  font-weight: lighter;
+  text-align: center;
+}
+
+.resto-info__description p {
+  display: -webkit-box;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  text-align: justify;
+}
+
+.resto-info__city p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.resto-info__rating p {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin: 5px 0;
+}
+
+.resto-info__rating p::before {
+  content: "★";
+  color: #FFD700;
+  margin-right: 5px;
+}
+
+/* Styling umum untuk detail restoran */
+.resto__name {
+  font-size: 2em;
+  font-weight: bold;
+  color: #468585;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.resto__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Styling untuk info restoran */
+.resto__info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.resto__info h3 {
+  font-size: 1.5em;
+  color: #468585;
+  margin-bottom: 15px;
+}
+
+.resto__info h4 {
+  font-size: 1.25em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.resto__info p {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Styling untuk menu restoran */
+.resto__menu {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.resto__menu h3 {
+  font-size: 1.5em;
+  color: #468585;
+  margin-bottom: 15px;
+}
+
+.resto__menu h4 {
+  font-size: 1.25em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.resto__menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resto__menu ul li {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+/* Styling untuk ul (Food & Drink) */
+.resto__menu ul li::before {
+  content: "•";
+  margin-right: 10px;
+  color: #468585;
+}
+
+/* Styling untuk review pelanggan */
+.resto__reviews {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.resto__reviews h3 {
+  font-size: 1.5em;
+  color: #468585;
+  margin-bottom: 15px;
+}
+
+.review {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.review h4 {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #468585;
+}
+
+.review p {
+  font-size: 1em;
+  color: #777;
+  margin-top: 10px;
+}
+
+.review p:last-child {
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+
+
+/* Responsif: Aturan untuk tampilan di perangkat kecil */
+@media (max-width: 768px) {
+  .resto__name {
+    font-size: 1.75em;
+  }
+
+  .resto__image {
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  .resto__info, .resto__menu, .resto__reviews {
+    margin-bottom: 20px;
+  }
+
+  .resto__info h3, .resto__menu h3, .resto__reviews h3 {
+    font-size: 1.25em;
+  }
+
+  .resto__info h4, .resto__menu h4 {
+    font-size: 1.125em;
+  }
+}
+
+/* Media query untuk layar sedang (≥650px) */
+@media screen and (min-width: 650px) {
+  .app-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+
+  .app-bar .app-bar__brand h1 {
+    font-size: 1.5em;
+  }
+
+  .app-bar .app-bar__menu {
+    display: none;
+  }
+
+  .app-bar .app-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .app-bar .app-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+/* Media query untuk layar besar (≥800px) */
+@media screen and (min-width: 800px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+}
+
+/* Media query untuk layar tablet (≤768px) */
+@media (max-width: 768px) {
+  #restaurants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query untuk layar kecil (≤480px) */
+@media (max-width: 480px) {
+  #restaurants {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsif: Menampilkan dua kolom untuk tampilan medium */
+
+/* Media query untuk layar besar (≥1024px) */
+@media (min-width: 1024px) {
+.containerResto {
+  grid-template-columns: repeat(3, 1fr); /* Tiga kolom */
+}
+}
+
+/* Media query untuk layar sedang (≥768px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+.containerResto {
+  grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+}
+}
+
+/* Media query untuk layar kecil (≤768px) */
+@media (max-width: 768px) {
+.containerResto {
+  grid-template-columns: 1fr; /* Satu kolom */
+}
+}
+
+@media (min-width: 1200px) {
+  .hero img {
+    width: 1000px;
+  }
+}
+
+
